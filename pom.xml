@@ -285,6 +285,12 @@
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
+				<configuration>
+                    <path>/</path>
+                    <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <ignorePackaging>true</ignorePackaging>  
+                </configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
@@ -292,7 +298,7 @@
 				<version>9.0.6.v20130930</version>
 				<configuration>
 					<webApp>
-						<contextPath>/${project.artifactId}</contextPath>
+						<contextPath>/</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
