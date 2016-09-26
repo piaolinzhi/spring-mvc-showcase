@@ -377,6 +377,12 @@
 					<li><a id="nestedProp" class="textLink"
 						href="<c:url value="/convert/bean?nested.foo=bar&nested.list[0].foo=baz&nested.map[key].list[0].foo=bip" />">Nested</a>
 					</li>
+					<li><a id="ajaxJSONNestedProp" class="textLink"
+                        href="<c:url value="/convert/bean?nested.foo=bar&nested.list[0].foo=baz&nested.map[key].list[0].foo=bip" />">Ajax JSON Nested</a>
+                        <input id="ajax-json-nested-v-1" type="hidden" name="nested.foo" value="bar" />
+                        <input id="ajax-json-nested-v-2" type="hidden" name="nested.list[0].foo" value="baz" />
+                        <input id="ajax-json-nested-v-3" type="hidden" name="nested.map[key].list[0].foo" value="bip" />
+                    </li>
 				</ul>
 			</div>
 		</div>
@@ -479,6 +485,10 @@
 		src="<c:url value="/resources/jqueryui/1.8/jquery.ui.tabs.js" />"></script>
 	<script type="text/javascript"
 		src="<c:url value="/resources/json2.js" />"></script>
+	<%-- <script type="text/javascript"
+        src="<c:url value="/resources/jquery.serialize-object.js" />"></script> --%>
+	<script type="text/javascript"
+        src="<c:url value="/resources/convert/convert.js" />"></script>
 	<script>
 		MvcUtil = {};
 		MvcUtil.showSuccessResponse = function(text, element) {
