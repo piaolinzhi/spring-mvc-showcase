@@ -342,9 +342,16 @@
 				<li><a id="collection" class="textLink"
 					href="<c:url value="/convert/collection?values=1&values=2&values=3&values=4&values=5" />">Collection
 						1 (multi-value parameter)</a></li>
+				
 				<li><a id="collection2" class="textLink"
 					href="<c:url value="/convert/collection?values=1,2,3,4,5" />">Collection
 						2 (single comma-delimited parameter value)</a></li>
+				<li><a id="collection3" class="textLink"
+                    href="<c:url value="/convert/collection?values=1&values=2&values=3&values=4&values=5" />">Collection
+                        1 (multi-value parameter)</a><input type="button" id="converter-collection3" value="click me"/></li>
+                <input type="hidden" name="values" value="7" />
+                <input type="hidden" name="values" value="8" />
+                <input type="hidden" name="values" value="9" />
 				<li><a id="formattedCollection" class="textLink"
 					href="<c:url value="/convert/formattedCollection?values=2010-07-04,2011-07-04" />">@Formatted
 						Collection</a></li>

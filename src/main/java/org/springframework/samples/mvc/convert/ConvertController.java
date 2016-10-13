@@ -2,6 +2,7 @@ package org.springframework.samples.mvc.convert;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -27,7 +28,7 @@ public class ConvertController {
 	}
 
 	@RequestMapping("collection")
-	public @ResponseBody String collection(@RequestParam Collection<Integer> values) {
+	public @ResponseBody String collection(@RequestParam List<Integer> values) {
 		return "Converted collection " + values;
 	}
 

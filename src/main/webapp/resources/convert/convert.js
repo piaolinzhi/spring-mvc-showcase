@@ -28,8 +28,13 @@ $(document).ready(function() {
 		return objectData;
 	};
 	ajaxJSONNestedConvert();
+	$("#converter-collection3").bind("click",collection3Handler);
 });
 
+
+/**
+ * ajax json nested convert handler;
+ */
 function ajaxJSONNestedConvert() {
 	var link = $('#ajaxJSONNestedProp');
 	// /convert/bean?nested.foo=bar&nested.list[0].foo=baz&nested.map[key].list[0].foo=bip
@@ -59,4 +64,29 @@ function ajaxJSONNestedConvert() {
 		}
 	});
 
+}
+/**
+ * collection3 handler 
+ */
+function collection3Handler(){
+	console.log("collection3 handler");
+	var $link=$('#collection3');
+	var $data=$("input[name='values']");
+	console.dir($data);
+	console.dir($data.serialize());
+	
+	$.ajax({
+		url : '/convert/collection',
+		data : $data.serialize(),
+		success : function(text) {
+			MvcUtil.showSuccessResponse(text, $link);
+			console.log("success");
+			console.dir(text);
+		},
+		error : function(xhr) {
+			MvcUtil.showErrorResponse(xhr.responseText, $link);
+			console.log("fail");
+			console.dir(xhr);
+		}
+	});
 }
